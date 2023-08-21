@@ -14,11 +14,11 @@ def newton_raphson(function_str, x_0, k_max, epsilon=EPSILON) :
 
     while k < k_max and np.abs(f(function_str, x_k)) > epsilon:
 
-        table.append([k, float(x_k)])
+        fx_k = f(function_str, x_k)
 
-        x_k = x_k - (f(function_str, x_k)/f_prime(function_str, x_k))
+        table.append([k, float(x_k), float(fx_k)])
+
+        x_k = x_k - (fx_k/f_prime(function_str, x_k))
         k = k + 1
-
-
-    print(pd.DataFrame(table, columns=["x_k", "k"]))
-    return pd.DataFrame(table, columns=["x_k", "k"])
+        
+    return pd.DataFrame(table, columns=["k", "x_k", "error"])
