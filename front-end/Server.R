@@ -1,7 +1,6 @@
 library(shiny)
 library(reticulate)
 
-use_python("/Library/Frameworks/Python.framework/Versions/3.10/bin/python3")
 
 py_install("pandas")
 py_install("numpy")
