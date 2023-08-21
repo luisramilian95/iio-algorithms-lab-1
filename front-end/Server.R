@@ -32,7 +32,6 @@ shinyServer(function(input, output) {
     k_max<-as.integer(input$k_max[1])
     epsilon<-as.double(input$epsilon[1])
     outs<-bisection(function_str, a,b, k_max, epsilon)
-    print(outs)
     return (outs)
   })
   
