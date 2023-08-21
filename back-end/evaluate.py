@@ -32,4 +32,14 @@ def f(function_str, x):
 
 def f_prime(function_str, x):
     delta_x = 0.00001
-    return float((evaluate_function(function_str, x + delta_x) - evaluate_function(function_str,x)) / delta_x)
+    return (evaluate_function(function_str, x + delta_x) - evaluate_function(function_str,x)) / delta_x
+
+
+def f_bi_prime(function_str, x): 
+    delta_x = 0.00001
+
+    fx_plus_delta_x = f(function_str, x + delta_x)
+    fx = f(function_str, x)
+    fx_subs_delta_x = f(function_str, x - delta_x)
+
+    return  (fx_plus_delta_x -  2 * fx + fx_subs_delta_x) / (delta_x ** 2)
