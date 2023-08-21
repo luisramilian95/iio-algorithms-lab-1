@@ -1,5 +1,5 @@
 import numpy as np
-from evaluate import f_prime, f
+from evaluate import f_prime, f_bi_prime
 import pandas as pd
 
 EPSILON = 10 ** -12
